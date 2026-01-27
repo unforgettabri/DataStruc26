@@ -1,0 +1,89 @@
+import java.util.Scanner;
+public class labAct3{
+    public static void main(String[] args) {
+
+        int rent, sales, comedy, horror, scifi, drama, cartoons, dvdTotal, vcdTotal, tapeTotal;
+        
+        System.out.println("""
+                Registration:
+                1. DVD
+                2. VCD
+                3. Tape
+        """);
+
+        //input code(choice)
+        Scanner input = new Scanner(System.in);
+        System.out.print("Choice: ");
+        int choice = input.nextInt();
+
+        switch (choice){
+            case 1:
+                System.out.print("DVD Total: ");
+                dvdTotal = input.nextInt();
+                break;
+            case 2:
+                System.out.print("VCD Total: ");
+                vcdTotal = input.nextInt();
+                break;
+            case 3:
+                System.out.print("Tape Total: ");
+                tapeTotal = input.nextInt();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        //input title
+        System.out.print("Title: ");
+        String title = input.next();
+
+        //input genre
+        System.out.println("""
+                Genre:
+                1. Horror
+                2. Scifi
+                3. Drama
+                4. Comedy
+                5. Cartoons
+        """);
+
+        //input category(genre)
+        System.out.print("Category: ");
+        int category = input.nextInt();
+
+        //switch case for genre
+        switch (category){
+            case 1: 
+                horror++;
+                break;  
+            case 2:
+                scifi++;
+                break;
+            case 3:
+                drama++;
+                break;
+            case 4:
+                comedy++;
+                break;
+            case 5:
+                cartoons++;
+                break;
+        }   
+
+        //input minutes
+        System.out.print("Minutes: ");
+        int minutes = input.nextInt();
+
+        //input setting(genre)
+        System.out.print("Genre ---> Settings: ")
+        String settings = input.next();
+
+        //display kind of transaction
+        System.out.println("""
+                Transaction:
+                1. Rent
+                2. Sale
+        """);
+        System.out.print("Transaction: ");
+    }
+}
