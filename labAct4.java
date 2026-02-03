@@ -31,25 +31,25 @@ public class labAct4 {
         System.out.print("Discount: ");
         dDiscount = InputDouble();
 
-        //call nethod that compute the salary
+        // call nethod that compute the salary
         double subTOtal = computeTotal(dPrice, dQty, dDiscount);
 
-        //for spacing 
+        // for spacing
         System.out.println();
 
-        //method that will display product details and computed total
+        // method that will display product details and computed total
         displayInfo(iprodId, strprodName, dPrice, dQty, dDiscount, subTOtal);
 
     }
 
     public static String InputString() {
         String strInput = sc.nextLine();
-        sc.nextLine();
         return strInput;
     }
 
     public static int InputInt() {
         int iInput = sc.nextInt();
+        sc.nextLine();
         return iInput;
     }
 
@@ -58,13 +58,14 @@ public class labAct4 {
         return dInput;
     }
 
-    public static double computeTotal(double dPrice, double dQty, double dDiscount){
+    public static double computeTotal(double dPrice, double dQty, double dDiscount) {
 
         double dSubTotal = (dPrice * dQty) - dDiscount;
         return dSubTotal;
     }
 
-    public static void displayInfo(int iprodId, String strprodName, double dPrice, double dQty, double dDiscount, double subTOtal){
+    public static void displayInfo(int iprodId, String strprodName, double dPrice, double dQty, double dDiscount,
+            double subTOtal) {
         System.out.println(iprodId + " " + strprodName);
         System.out.println("Priced at " + dPrice + " for " + dQty + " pieces.");
         System.out.println("Discounted at " + dDiscount);
