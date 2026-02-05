@@ -29,12 +29,18 @@ public class labAct3{
                     tapeTotal++;
                     break;
                 default:
-                    System.out.println("Invalid choice");
+                    System.out.print("Invalid choice. Enter 1–3 only: ");
+                    choice = input.nextInt();
             }
 
             //input title
             System.out.print("Title: ");
-            String title = input.next();
+            input.nextLine(); // flush
+            String title = input.nextLine();
+            while (title.trim().isEmpty()) {
+                System.out.print("Title cannot be empty. Enter again: ");
+                title = input.nextLine();
+            }
 
             //input genre
             System.out.println();
@@ -69,16 +75,23 @@ public class labAct3{
                 case 5:
                     cartoons++;
                     break;
+                default:
+                    System.out.print("Invalid genre. Enter 1–5 only: ");
+                    category = input.nextInt();
             }   
 
             //input minutes
             Scanner scan = new Scanner(System.in);
             System.out.print("Minutes: ");
             int minutes = scan.nextInt();
+            while (minutes <= 0) {
+                System.out.print("Minutes must be greater than 0: ");
+                minutes = input.nextInt();
+            }
 
             //input setting(genre)
             Scanner basta = new Scanner(System.in);
-            System.out.print("Genre ---> Settings: ");
+            System.out.print("Genre: ");
             String settings = basta.next();
 
             //display kind of transaction
@@ -95,12 +108,15 @@ public class labAct3{
                 rent++;
             } else if (transaction == 2) {
                 sales++;
+            } else {
+                System.out.println("Invalid transaction");
             }
 
             //ask the user for price
             Scanner eme = new Scanner(System.in);
             System.out.print("Price: ");
             int price = eme.nextInt();
+            input.nextLine();
 
             //ask the user if they want to register another
             Scanner shala = new Scanner(System.in);
