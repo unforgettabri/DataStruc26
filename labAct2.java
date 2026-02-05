@@ -37,15 +37,15 @@ public class labAct2{
                 cAnotherP = strAnotherP.charAt(0);
             } while((cAnotherP == 'Y') || (cAnotherP == 'y'));
 
-            System.out.println("Bill: " + dBill);
-            System.out.print("Payment: ");
+            System.out.printf("Total: %.2f%n", dTotal);
+            System.out.printf("Bill: %.2f%n", dBill);
             dPay = input.nextDouble();
 
             input.nextLine();
 
             if (dPay >= dBill){
             dChange = dPay - dBill;
-            System.out.println("Change: " +dChange);
+            System.out.printf("Change: %.2f%n", dChange);
             System.out.println("Thank you for shopping.");
             } else {
             System.out.println("Money is not enough!");
