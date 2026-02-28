@@ -1,4 +1,7 @@
-public class foodTxtFile {
+import java.util.Scanner;
+import java.io.*;
+
+public class dataStrucAct {
     // Arrays to store up to 100 items
     static String[] foodNames = new String[100];
     static String[] foodTastes = new String[100];
@@ -9,10 +12,9 @@ public class foodTxtFile {
 
     public static void main(String[] args) throws Exception {
         
-        // File handling
+        // file handlers
         File inputFile = new File("foods.txt");
-        FileWriter fw = new FileWriter("foods_output.txt");
-        
+
         // Read from file and extract to arrays
         if (inputFile.exists()) {
             Scanner fileScanner = new Scanner(inputFile);
@@ -27,3 +29,20 @@ public class foodTxtFile {
             fileScanner.close();
             System.out.println("Loaded " + entryCount + " entries from file.");
         }
+
+        // Display all entries
+        System.out.println("\nDisplaying values...");
+        for (int i = 0; i < entryCount; i++) {
+            displayInfo(i);
+        }
+    }
+
+    public static void displayInfo(int index) {
+        System.out.println("====================");
+        System.out.println("Food Name: " + foodNames[index]);
+        System.out.println("Taste: " + foodTastes[index]);
+        System.out.println("Texture: " + foodTextures[index]);
+        System.out.printf("Price: %.2f\n", foodPrices[index]);
+        System.out.print("Aroma: " + foodAromas[index]);
+    }
+}
