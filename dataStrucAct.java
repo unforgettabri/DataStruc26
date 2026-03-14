@@ -28,17 +28,17 @@ public class dataStrucAct {
                 // foodAromas[entryCount] = fileScanner.nextLine();
             
                 foodNames[entryCount] = fileScanner.nextLine();
-                if (!fileScanner.hasNextLine()) break;
-
+                if (!fileScanner.hasNextLine()) 
+                break;
                 foodTastes[entryCount] = fileScanner.nextLine();
-                if (!fileScanner.hasNextLine()) break;
-
+                if (!fileScanner.hasNextLine()) 
+                break;
                 foodTextures[entryCount] = fileScanner.nextLine();
-                if (!fileScanner.hasNextLine()) break;
-
+                if (!fileScanner.hasNextLine())
+                break;
                 foodPrices[entryCount] = Double.parseDouble(fileScanner.nextLine());
-                if (!fileScanner.hasNextLine()) break;
-
+                if (!fileScanner.hasNextLine()) 
+                break;
                 foodAromas[entryCount] = fileScanner.nextLine();
 
                 entryCount++;
