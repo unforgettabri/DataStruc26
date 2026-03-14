@@ -21,11 +21,26 @@ public class dataStrucAct {
         if (inputFile.exists()) {
             Scanner fileScanner = new Scanner(inputFile);
             while (fileScanner.hasNextLine() && entryCount < 100) {
+                // foodNames[entryCount] = fileScanner.nextLine();
+                // foodTastes[entryCount] = fileScanner.nextLine();
+                // foodTextures[entryCount] = fileScanner.nextLine();
+                // foodPrices[entryCount] = Double.parseDouble(fileScanner.nextLine());
+                // foodAromas[entryCount] = fileScanner.nextLine();
+            
                 foodNames[entryCount] = fileScanner.nextLine();
+                if (!fileScanner.hasNextLine()) break;
+
                 foodTastes[entryCount] = fileScanner.nextLine();
+                if (!fileScanner.hasNextLine()) break;
+
                 foodTextures[entryCount] = fileScanner.nextLine();
+                if (!fileScanner.hasNextLine()) break;
+
                 foodPrices[entryCount] = Double.parseDouble(fileScanner.nextLine());
+                if (!fileScanner.hasNextLine()) break;
+
                 foodAromas[entryCount] = fileScanner.nextLine();
+
                 entryCount++;
             }
             fileScanner.close();
@@ -89,7 +104,9 @@ public class dataStrucAct {
                 System.out.println("Sort selected");
                 break;
             case 6:
-                displayInfo();
+                for (int i = 0; i < entryCount; i++) {
+                    displayInfo(i);
+                }
                 break;
         }
     }
@@ -101,6 +118,6 @@ public class dataStrucAct {
         System.out.println("Taste: " + foodTastes[index]);
         System.out.println("Texture: " + foodTextures[index]);
         System.out.printf("Price: %.2f\n", foodPrices[index]);
-        System.out.print("Aroma: " + foodAromas[index]);
+        System.out.println("Aroma: " + foodAromas[index]);
     }
 }
